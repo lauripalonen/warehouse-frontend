@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
 
-    let eventSource = new EventSource('http://localhost:3001/stream')
+    let eventSource = new EventSource('/api/stream')
     eventSource.onmessage = message => {
       console.log('received message: ', message)
       const beanieUpdate = message.find(m => m.category === 'beanies').products
