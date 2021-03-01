@@ -7,7 +7,7 @@ Reposity for backend [here](https://github.com/lauripalonen/warehouse-backend).
 
 For efficient display of large product table, [react-virtualized](https://github.com/bvaughn/react-virtualized) is utilized.
 
-# Installation  
+## Installation  
 **Requirements:**  
 Node
 
