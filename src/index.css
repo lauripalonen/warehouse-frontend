@@ -33,6 +33,11 @@ html {
   text-align: center;
 }
 
+.update-status-block {
+  height: 2em;
+  padding-top: 0.5em;
+}
+
 .product-list {
   color: white;
   background-color:#242730;
@@ -52,4 +57,15 @@ html {
 button{
   margin: 0em 0.5em 0em 0.5em;
   height: 3em;
+  font-weight:bold;
+  border-radius: 5px;
+  border: 2px solid #ff5544;
+  margin: 0em 0.5em 0em 0.5em;
+  height: 3em;
+  font-weight: bold;
+}
+
+
+button:disabled{
+  color: grey;
 }
