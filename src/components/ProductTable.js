@@ -3,21 +3,14 @@ import { Column, Table } from 'react-virtualized'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import 'react-virtualized/styles.css'
 
-const ProductTable = ({ beanies, gloves, facemasks, category }) => {
-
-  var products = ''
-  switch(category){
-    case('beanies'): products = beanies; break
-    case('facemasks'): products = facemasks; break
-    case('gloves'): products= gloves; break
-    default: products = ''; break
-  }
-
-  if(products === ''){
+const ProductTable = ({ products, display }) => {
+  if (!products || display !== products.category) {
     return <div></div>
   }
 
-  if (products.length > 0) {
+  const catalog = products.catalog
+
+  if (catalog.length > 0) {
     return (
       <div className={'product-list'}>
         <AutoSizer>
@@ -27,8 +20,8 @@ const ProductTable = ({ beanies, gloves, facemasks, category }) => {
               height={height}
               headerHeight={50}
               rowHeight={30}
-              rowCount={products.length}
-              rowGetter={({ index }) => products[index]}>
+              rowCount={catalog.length}
+              rowGetter={({ index }) => catalog[index]}>
               <Column width={250} label="Name" dataKey="name" />
               <Column width={150} label="Availability" dataKey="availability" />
               <Column width={80} label="Price" dataKey="price" />
